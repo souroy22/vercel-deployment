@@ -17,7 +17,7 @@ Before you begin, make sure you have Node.js and npm installed on your machine.
 2. **Install required dependencies:**
 
     ```bash
-    npm install express typescript ts-node @types/node @types/express --save-dev
+    npm install typescript ts-node @types/node @types/express --save-dev
     ```
 
 3. **Create a `tsconfig.json` in the root directory and add the following configuration:**
