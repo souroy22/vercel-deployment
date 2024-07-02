@@ -24,43 +24,45 @@ Before you begin, make sure you have Node.js and npm installed on your machine.
 
     ```json
     {
-        "compilerOptions": {
-            "module": "commonjs",
-            "esModuleInterop": true,
-            "allowSyntheticDefaultImports": true,
-            "target": "es6",
-            "noImplicitAny": true,
-            "moduleResolution": "node",
-            "sourceMap": true,
-            "outDir": "dist",
-            "baseUrl": ".",
-            "paths": {
-                "*": ["node_modules/*", "src/types/*"]
-            }
-        },
-        "include": ["./src/**/*"]
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es6",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/*", "src/types/*"]
     }
+  },
+  "include": ["./src/**/*"]
+}
+
     ```
 
 4. **Create a `vercel.json` file in the root directory and add the following configuration:**
 
     ```json
     {
-        "version": 2,
-        "builds": [
-            {
-                "src": "dist/index.js",
-                "use": "@vercel/node",
-                "config": { "includeFiles": ["dist/**"] }
-            }
-        ],
-        "routes": [
-            {
-                "src": "/(.*)",
-                "dest": "dist/index.js"
-            }
-        ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "dist/index.js",
+      "use": "@vercel/node",
+      "config": { "includeFiles": ["dist/**"] }
     }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/index.js"
+    }
+  ]
+}
+
     ```
 
 5. **Install pre-commit and rimraf:**
